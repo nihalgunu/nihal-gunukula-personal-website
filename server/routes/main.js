@@ -14,4 +14,16 @@ router.get('/about', (req, res) => {
     res.render('about');
 });
 
+router.get('/applications', (req, res) => {
+    res.render('applications');
+});
+
+router.get('/research', (req, res) => {
+    res.render('research');
+});
+
+router.get('/resume', (req, res) => {
+    res.render('resume');
+});
+
 module.exports = router;
