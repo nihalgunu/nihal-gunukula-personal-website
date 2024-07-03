@@ -11,7 +11,7 @@
  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
  --border-radius: 10px;
- --image-border-radius: 100px;
+ --image-border-radius: 25px;
 }
 
 body {
@@ -70,7 +70,7 @@ textarea {
 }
 
 img {
-    width: 15%;
+    width: 90%;
     height: auto;
 }
 
@@ -86,10 +86,17 @@ img {
 }
 
 /* Hero Section */
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hero-image {
     filter: drop-shadow(0px 44px 34px rgba(0,0,0,0.25));
     overflow: hidden;
     border-radius: var(--image-border-radius);
+    align-items: center;
 }
 
 /* Main Header */
@@ -191,8 +198,75 @@ img {
     margin: 5px 0 40px;
 }
 
-/* Home Page List */
+/* Home Article List */
+.article__heading {
+    margin-top: 4rem;
+    font-weight: 400;
+}
 
+.article-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: clamp(1.13rem, calc(1.08rem + .22vw), 1.25rem);
+    display: flex;
+    flex-direction: column;
+}
 
+.article__date {
+    font-size: var(--font-size-base);
+    color: var(--gray);
+    width: 260px;
+    display: inline-block;
+}
 
-/* CENTER MY PFP */
+.article-ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    margin: 18px 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .article-ul li a {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.article-list__date {
+    text-align: right;
+}
+
+.article-ul li {
+    font-size: 24px;
+    cursor: pointer;
+    transition: filter 0.1s;
+}
+
+.article-ul li:not(:Last-child) {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.article-ul li:hover {
+    filter: none;
+}
+
+.article-ul:hover li {
+    filter: blur(3px);
+}
+
+.article-ul:hover li:hover {
+    filter: none;
+}
+
+.article {
+    white-space: pre-wrap;
+}
+
+/* Footer */
+.footer {
+    margin: 4rem;
+    text-align: center;
+}
