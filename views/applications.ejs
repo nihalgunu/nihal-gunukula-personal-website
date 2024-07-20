@@ -1,10 +1,120 @@
-<h1>Cool things I am building</h1>
-<h2> VirtualYou </h2>
-<h2> OpenSpaces </h2>
-<h2> Fred. </h2>
-<h2> DailyWins </h2>
-<h2> LendingPlatform </h2>
-<h2> MusicCommunityPage </h2>
-<h2> ChairCare </h2>
-<h2> ML - Leaderboard </h2>
-<h2> This Website </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications</title>
+    <style>
+        body {
+            background: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .app-card {
+            background: #f0f8ff;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .app-image {
+            flex: 1;
+            max-width: 200px;
+            height: auto;
+        }
+        .app-content {
+            flex: 3;
+            padding: 20px;
+        }
+        .app-content h2 {
+            margin: 0 0 10px;
+        }
+        .app-content p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .app-content .technologies {
+            font-style: italic;
+            color: #888;
+        }
+        .app-content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .app-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cool things I am building</h1>
+    <div class="container">
+        <% const applications = [
+            { name: "VirtualYou", 
+              img: "path/to/virtualyou.jpg", 
+              description: "A virtual representation platform.", 
+              technologies: "React, Node.js", link: { url: "https://virtualyou.com", type: "website" } },
+            { name: "OpenSpaces", 
+              img: "path/to/openspaces.jpg", 
+              description: "A storage solutions company.", 
+              technologies: "Java, MongoDB", 
+              url: "https://openspaces.com" },
+            { name: "Fred.", img: "path/to/fred.jpg", 
+              description: "A design-focused application.", 
+              technologies: "Next.js, Tailwind CSS", 
+              url: "https://fred.com" },
+            { name: "DailyWins", 
+              img: "path/to/dailywins.jpg", 
+              description: "A habit tracker app.", 
+              technologies: "Swift, SwiftUI", url: "" },
+            { name: "LendingPlatform", 
+              img: "path/to/lendingplatform.jpg", 
+              description: "A decentralized lending platform.", 
+              technologies: "Blockchain, Coinweb", 
+              url: "" },
+            { name: "DataMarketPlace", 
+              img: "path/to/datamarketplace.jpg", 
+              description: "A marketplace for data.", 
+              technologies: "Python, Flask", 
+              url: "" },
+            { name: "ChairCare", 
+              img: "path/to/chaircare.jpg", 
+              description: "A service for childcare programs.", 
+              technologies: "PHP, Laravel", 
+              url: "" },
+            { name: "ML - Leaderboard", 
+              img: "path/to/ml-leaderboard.jpg", 
+              description: "A leaderboard for machine learning models.", 
+              technologies: "TensorFlow, Flask", 
+              url: "" },
+            { name: "This Website", 
+              img: "path/to/thiswebsite.jpg", 
+              description: "My personal portfolio website.", 
+              technologies: "HTML, CSS, JavaScript", 
+              url: "" }
+        ]; %>
+
+        <% applications.forEach(app => { %>
+            <div class="app-card">
+                <div class="app-content">
+                    <h2><%= app.name %></h2>
+                    <p><%= app.description %></p>
+                    <p class="technologies">Technologies used: <%= app.technologies %></p>
+                    <% if (app.link) { %>
+                        <p><a href="<%= app.link.url %>" target="_blank">View <%= app.link.type === 'website' ? 'Live Website' : 'GitHub' %></a></p>
+                    <% } else { %>
+                        <p>Still in Development</p>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
