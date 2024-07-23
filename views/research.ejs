@@ -1,5 +1,75 @@
-<h1>My novel contributions</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .app-card {
+            background: #f0f8ff;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .app-image {
+            flex: 1;
+            max-width: 200px;
+            height: auto;
+        }
+        .app-content {
+            flex: 3;
+            padding: 20px;
+        }
+        .app-content h2 {
+            margin: 0 0 10px;
+        }
+        .app-content p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .app-content .technologies {
+            font-style: italic;
+            color: #888;
+        }
+        .app-content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .app-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Research Work</h1>
+    <div class="container">
+        <% const content = [
+            { name: "Areas of Expertise", 
+              description: "...", },
+            { name: "Some Papers", 
+              description: "...", },
+        ]; %>
 
-<h2>Areas of expertise</h2>
-
-<h2>Some papers</h2>
+        <% content.forEach(app => { %>
+            <div class="app-card">
+                <div class="app-content">
+                    <h2><%= app.name %></h2>
+                    <p><%= app.description %></p>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
