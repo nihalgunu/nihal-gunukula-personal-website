@@ -269,3 +269,37 @@ img {
     margin: 4rem;
     text-align: center;
 }
+
+/* Profile Card */
+.content {
+    display: flex;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.sidebar {
+    width: 350px; /* Increased the width */
+    padding-left: 100px; /* Adjust the padding as needed */
+    padding-top: 100px;
+    padding-right: 10px
+}
+
+.profile-card {
+    background-color: #f9f9f9;
+    padding-top: 40px; /* Increased the top padding */
+    padding-bottom: 40px; /* Increased the bottom padding */
+    padding-left: 20px; /* Set left padding */
+    padding-right: 20px; /* Set right padding */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Ensure the card takes the full width of the sidebar */
+    height: 600px; /* Significantly increased the height */
+}
+
+.profile-card h2 {
+    margin: 10px 0;
+}
+

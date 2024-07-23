@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= locals.title %></title>
-    <meta name="descriptions" content="<%- locals.description %>">
+    <meta name="description" content="<%- locals.description %>">
     <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" defer src="/js/script.js"></script>
 </head>
 <body>
     <div class="container">
         <%- include('../partials/header.ejs') %>
-        <main class="main">
-            <%- body %>
-        </main>
+        <div class="content">
+            <main class="main-content">
+                <%- body %>
+            </main>
+            <% if (showProfileCard) { %>
+            <aside class="sidebar">
+                <%- include('../partials/profileCard.ejs') %>
+            </aside>
+            <% } %>
+        </div>
         <%- include('../partials/footer.ejs') %>
     </div>
-
 </body>
 </html>
