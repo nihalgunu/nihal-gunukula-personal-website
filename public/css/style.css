@@ -303,3 +303,21 @@ img {
     margin: 10px 0;
 }
 
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-card p {
+    margin: 10px 0;
+}
+.profile-card .accomplishment {
+    margin: 20px 0;
+}
+.profile-card .accomplishment strong {
+    display: block;
+    margin-bottom: 5px;
+}
