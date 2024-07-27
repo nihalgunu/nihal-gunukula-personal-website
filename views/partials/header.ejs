@@ -22,8 +22,12 @@
     </nav>
 
     <div class="header__button">
-        <button class="searchBtn" aria-expanded="false">
-            Contact Me
-        </button>
+        <button class="searchBtn" aria-expanded="false" onclick="openEmailClient()">Contact Me</button>
+    </div>
     </div>
 </header>
+<script>
+    function openEmailClient() {
+        window.location.href = 'mailto:nihalgunukula@gmail.com';
+    }
+</script>
