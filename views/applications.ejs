@@ -50,75 +50,113 @@
         .app-content a:hover {
             text-decoration: underline;
         }
+        .hidden {
+            display: none;
+        }
+        #view-more-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto;
+        }
+        #view-more-btn:hover {
+            background-color: #2980b9;
+        }
+        #view-more-btn:focus {
+            outline: none;
+            box-shadow: 0 0 5px #2980b9;
+        }
     </style>
 </head>
 <body>
     <h1>Cool things I am building</h1>
     <div class="container">
-        <% const applications = [
-            { name: "VirtualYou", 
-              img: "path/to/virtualyou.jpg", 
-              description: "A virtual presence of yourself.", 
-              technologies: "Next.js, Python, Prometheus, Grafana, Kubernetes", url: "" },
-            { name: "OpenSpaces", 
-              img: "path/to/openspaces.jpg", 
-              description: "A storage solutions company.", 
-              technologies: "Java, MongoDB", 
-              url: "https://openspaces.com" },
-            { name: "Fred.", img: "path/to/fred.jpg", 
-              description: "Your productivity robot.", 
-              technologies: "Flutter, Firebase, Python", 
-              url: "https://fred.com" },
-            { name: "DailyWins", 
-              img: "path/to/dailywins.jpg", 
-              description: "A habit tracker app.", 
-              technologies: "Swift, SwiftUI", url: "" },
-            { name: "LendingPlatform", 
-              img: "path/to/lendingplatform.jpg", 
-              description: "A decentralized lending platform.", 
-              technologies: "Next.js, Golang, SQLite, Apache (Spark, Hadoop, Hive, Kafka), Coinweb", 
-              url: "" },
-            // { name: "DataMarketPlace", 
-            //   img: "path/to/datamarketplace.jpg", 
-            //   description: "A marketplace for data.", 
-            //   technologies: "Python, Flask", 
-            //   url: "" },
-            // { name: "ChairCare", 
-            //   img: "path/to/chaircare.jpg", 
-            //   description: "A service for childcare programs.", 
-            //   technologies: "PHP, Laravel", 
-            //   url: "" },
-            { name: "ML - Leaderboard", 
-              img: "path/to/ml-leaderboard.jpg", 
-              description: "The go to platform for ML hackathons.", 
-              technologies: "React, Javascript, ML-Flow", 
-              link: { url: "https://github.com/ML-Purdue/leaderboard-server", type: "github" } },
-              { name: "Usopp", 
-              img: "path/to/ml-leaderboard.jpg", 
-              description: "Federated Learning Implemmentation in an IOS Application.", 
-              technologies: "Swift, AWS Sage, AWS Bedrock", 
-              link: { url: "https://github.com/nihalgunu/OnePieceLabs-OG-CAMP-Hackathon", type: "github" } },
-            { name: "This Website", 
-              img: "path/to/thiswebsite.jpg", 
-              description: "My personal portfolio website.", 
-              technologies: "Node.js, Embedded.js, HTML, CSS", 
-              url: "" }
-        ]; %>
-
-        <% applications.forEach(app => { %>
+        <div class="app-card">
+            <div class="app-content">
+                <h2>VirtualYou</h2>
+                <p>A virtual presence of yourself.</p>
+                <p class="technologies">Technologies used: Next.js, Python, Prometheus, Grafana, Kubernetes</p>
+                <p>Still in Development</p>
+            </div>
+        </div>
+        <div class="app-card">
+            <div class="app-content">
+                <h2>OpenSpaces</h2>
+                <p>A storage solutions company.</p>
+                <p class="technologies">Technologies used: Java, MongoDB</p>
+                <p>Still in Development</p>
+            </div>
+        </div>
+        <div class="app-card">
+            <div class="app-content">
+                <h2>Fred.</h2>
+                <p>Your productivity robot.</p>
+                <p class="technologies">Technologies used: Flutter, Firebase, Python</p>
+                <p>Still in Development</p>
+            </div>
+        </div>
+        <div id="more-apps" class="hidden">
             <div class="app-card">
                 <div class="app-content">
-                    <h2><%= app.name %></h2>
-                    <p><%= app.description %></p>
-                    <p class="technologies">Technologies used: <%= app.technologies %></p>
-                    <% if (app.link) { %>
-                        <p><a href="<%= app.link.url %>" target="_blank">View <%= app.link.type === 'website' ? 'Live Website' : 'GitHub' %></a></p>
-                    <% } else { %>
-                        <p>Still in Development</p>
-                    <% } %>
+                    <h2>DailyWins</h2>
+                    <p>A habit tracker app.</p>
+                    <p class="technologies">Technologies used: Swift, SwiftUI</p>
+                    <p>Still in Development</p>
                 </div>
             </div>
-        <% }) %>
+            <div class="app-card">
+                <div class="app-content">
+                    <h2>LendingPlatform</h2>
+                    <p>A decentralized lending platform.</p>
+                    <p class="technologies">Technologies used: Next.js, Golang, SQLite, Apache (Spark, Hadoop, Hive, Kafka), Coinweb</p>
+                    <p>Still in Development</p>
+                </div>
+            </div>
+            <div class="app-card">
+                <div class="app-content">
+                    <h2>ML - Leaderboard</h2>
+                    <p>The go to platform for ML hackathons.</p>
+                    <p class="technologies">Technologies used: React, Javascript, ML-Flow</p>
+                    <p><a href="https://github.com/ML-Purdue/leaderboard-server" target="_blank">View GitHub</a></p>
+                </div>
+            </div>
+            <div class="app-card">
+                <div class="app-content">
+                    <h2>Usopp</h2>
+                    <p>Federated Learning Implementation in an IOS Application.</p>
+                    <p class="technologies">Technologies used: Swift, AWS Sage, AWS Bedrock</p>
+                    <p><a href="https://github.com/nihalgunu/OnePieceLabs-OG-CAMP-Hackathon" target="_blank">View GitHub</a></p>
+                </div>
+            </div>
+            <div class="app-card">
+                <div class="app-content">
+                    <h2>This Website</h2>
+                    <p>My personal portfolio website.</p>
+                    <p class="technologies">Technologies used: Node.js, Embedded.js, HTML, CSS</p>
+                    <p>Still in Development</p>
+                </div>
+            </div>
+        </div>
+        <button id="view-more-btn">View More</button>
     </div>
+
+    <script>
+        document.getElementById("view-more-btn").addEventListener("click", function() {
+            var moreApps = document.getElementById("more-apps");
+            if (moreApps.classList.contains("hidden")) {
+                moreApps.classList.remove("hidden");
+                this.textContent = "View Less";
+            } else {
+                moreApps.classList.add("hidden");
+                this.textContent = "View More";
+            }
+        });
+    </script>
 </body>
 </html>

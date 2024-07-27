@@ -296,7 +296,7 @@ img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%; /* Ensure the card takes the full width of the sidebar */
-    height: 600px; /* Significantly increased the height */
+    height: 500px; /* Significantly increased the height */
 }
 
 .profile-card h2 {
@@ -304,10 +304,11 @@ img {
 }
 
 .profile-image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
