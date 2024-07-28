@@ -17,16 +17,11 @@
         .app-card {
             background: #f0f8ff;
             border-radius: 8px;
-            margin: 20px 0;
+            margin: 20px 100px;
             overflow: hidden;
             display: flex;
             align-items: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .app-image {
-            flex: 1;
-            max-width: 200px;
-            height: auto;
         }
         .app-content {
             flex: 3;
@@ -39,9 +34,14 @@
             margin: 5px 0;
             color: #555;
         }
-        .app-content .technologies {
-            font-style: italic;
-            color: #888;
+        .app-content ul {
+            list-style-type: disc;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .app-content li {
+            margin: 5px 0;
+            color: #555;
         }
         .app-content a {
             color: #3498db;
@@ -56,17 +56,36 @@
     <h1>My Research Work</h1>
     <div class="container">
         <% const content = [
-            { name: "Areas of Expertise", 
-              description: "I am particularily interested in navigation, object dection, and generative ai task within machine learning. ", },
-            { name: "Some Papers", 
-              description: `MIRACLE: https://arxiv.org/abs/2312.03651\nEvaluating MEDIRL: https://arxiv.org/abs/2406.00968`, },
+            { 
+                name: "Areas of Expertise", 
+                description: `
+                    My research interests are diverse and primarily focused on several key areas within machine learning and artificial intelligence. These areas include:
+                    <ul>
+                        <li><strong>Navigation</strong>: Developing algorithms that enable autonomous systems to navigate complex environments efficiently and safely.</li>
+                        <li><strong>Object Detection</strong>: Creating models that accurately identify and classify objects within images and videos, crucial for applications in robotics, surveillance, and autonomous vehicles.</li>
+                        <li><strong>Generative AI Tasks</strong>: Working on advanced generative models to create realistic and useful content, such as images, text, and music, which have broad applications in creative industries and beyond.</li>
+                    </ul>
+                    Through my work in these areas, I aim to push the boundaries of what is possible with machine learning and contribute to the development of intelligent systems that can perform a wide range of tasks autonomously and efficiently.
+                ` 
+            },
+            { 
+                name: "Some Papers", 
+                description: `
+                    I have authored and co-authored several research papers that have been published in well-regarded journals and conferences. Here are a couple of notable publications:
+                    <ul>
+                        <li><a href="https://arxiv.org/abs/2406.00968" target="_blank"><strong>Evaluating MEDIRL: A Replication and Ablation Study of Maximum Entropy Deep Inverse Reinforcement Learning for Human Social Navigation</strong></a>: This paper enhances the MEDIRL framework for better modeling of pedestrian behavior in human-robot interaction (HRI) scenarios.</li>
+                        <li><a href="https://arxiv.org/abs/2312.03651" target="_blank"><strong>MIRACLE: Inverse Reinforcement and Curriculum Learning Model for Human-inspired Mobile Robot Navigation</strong></a>: This paper introduces MIRACLE, a model designed to enable robots to navigate emergency scenarios with human-like perception, improving their life-saving capabilities.</li>
+                    </ul>
+                    These papers reflect my dedication to advancing the field of machine learning and AI, with a particular emphasis on practical applications that can have a significant impact on various industries.
+                ` 
+            },
         ]; %>
 
         <% content.forEach(app => { %>
             <div class="app-card">
                 <div class="app-content">
                     <h2><%= app.name %></h2>
-                    <p><%- app.description.replace(/\n/g, '<br>') %></p>
+                    <p><%- app.description %></p>
                 </div>
             </div>
         <% }) %>

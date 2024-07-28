@@ -17,16 +17,11 @@
         .app-card {
             background: #f0f8ff;
             border-radius: 8px;
-            margin: 20px 0;
+            margin: 20px 100px;
             overflow: hidden;
             display: flex;
             align-items: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .app-image {
-            flex: 1;
-            max-width: 200px;
-            height: auto;
         }
         .app-content {
             flex: 3;
@@ -39,37 +34,71 @@
             margin: 5px 0;
             color: #555;
         }
-        .app-content .technologies {
-            font-style: italic;
-            color: #888;
+        .app-content ul {
+            list-style-type: disc;
+            margin: 10px 0;
+            padding-left: 20px;
         }
-        .app-content a {
-            color: #3498db;
-            text-decoration: none;
+        .app-content li {
+            margin: 5px 0;
+            color: #555;
         }
-        .app-content a:hover {
-            text-decoration: underline;
+        .app-content .section-title {
+            font-weight: bold;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <h1>Sneak peak into my life</h1>
+    <h1>Sneak Peak into My Life</h1>
     <div class="container">
-        
         <% const content = [
-            { name: "My Education", 
-              description: "As a Computer Science student at Purdue University, I am actively involved in various organizations and labs. I am a part of the IDEAS Lab and the Purdue Fusion Studio for Engineering and Entertainment. I also serve as the Director of CAST at Anvil and the Project Manager at ML@Purdue. Additionally, I hold the position of Technical Assistant at GDSC and previously served as the Vice President of the Phoenix Club.", },
-            { name: "Some things I enjoy", 
-              description: "I find joy in folding intricate origami dragons, taking long, peaceful walks in the park, and the exhilaration of snowboarding down a fresh layer of snow. I love to watch countless sunsets paint the sky with brilliant colors and enjoy the thrill of playing basketball.", },
-            { name: "What I love working on", 
-              description: "I'm driven by the ambition to build the next big thing, creating cool innovations that people genuinely want to use. My goal is always to make a clear and positive difference through my work.", },
+            { 
+                title: "My Education", 
+                description: `
+                    As a Computer Science student at Purdue University, I am actively involved in a variety of organizations and labs. My academic journey is shaped by a commitment to excellence and a passion for innovation. Here are some highlights:
+                    <ul>
+                        <li><strong>IDEAS Lab</strong>: Engaging in cutting-edge research and innovative projects.</li>
+                        <li><strong>Purdue Fusion Studio for Engineering and Entertainment</strong>: Collaborating on interdisciplinary projects that merge technology and creativity.</li>
+                        <li><strong>Director of CAST at Anvil</strong>: Leading and organizing events to foster a culture of creativity and innovation.</li>
+                        <li><strong>Project Manager at ML@Purdue</strong>: Overseeing machine learning projects and guiding teams towards successful outcomes.</li>
+                        <li><strong>Technical Assistant at GDSC</strong>: Providing technical support and resources to enhance student learning.</li>
+                        <li><strong>Former Vice President of the Phoenix Club</strong>: Leading initiatives and activities that promote student engagement and leadership.</li>
+                    </ul>
+                ` 
+            },
+            { 
+                title: "Some Things I Enjoy", 
+                description: `
+                    Life is not just about work; it's also about the experiences that bring joy and fulfillment. Here are some of my favorite activities:
+                    <ul>
+                        <li><strong>Folding Intricate Origami Dragons</strong>: A relaxing and creative hobby that sharpens focus and patience.</li>
+                        <li><strong>Taking Long Walks in the Park</strong>: Enjoying nature and finding peace in the tranquility of the outdoors.</li>
+                        <li><strong>Snowboarding</strong>: The thrill and exhilaration of carving through fresh snow on the slopes.</li>
+                        <li><strong>Watching Sunsets</strong>: Captivated by the brilliant colors that paint the sky during the golden hour.</li>
+                        <li><strong>Playing Basketball</strong>: Enjoying the competitive spirit and teamwork involved in the game.</li>
+                    </ul>
+                ` 
+            },
+            { 
+                title: "What I Love Working On", 
+                description: `
+                    I am driven by the ambition to build the next big thing, focusing on creating impactful innovations that people genuinely want to use. My professional interests include:
+                    <ul>
+                        <li><strong>Building Cool Innovations</strong>: Developing technology that makes a clear and positive difference in people's lives.</li>
+                        <li><strong>Making a Positive Impact</strong>: Ensuring that my work contributes to the betterment of society.</li>
+                        <li><strong>Pushing Boundaries</strong>: Continuously exploring new ideas and pushing the limits of what's possible.</li>
+                    </ul>
+                    By combining my educational background, personal interests, and professional ambitions, I strive to create a well-rounded and fulfilling life.
+                ` 
+            },
         ]; %>
 
-        <% content.forEach(app => { %>
+        <% content.forEach(section => { %>
             <div class="app-card">
                 <div class="app-content">
-                    <h2><%= app.name %></h2>
-                    <p><%= app.description %></p>
+                    <h2><%= section.title %></h2>
+                    <p><%- section.description %></p>
                 </div>
             </div>
         <% }) %>
