@@ -273,6 +273,7 @@ img {
 /* Profile Card */
 .content {
     display: flex;
+    flex-wrap: wrap; /* Allow the content to wrap on smaller screens */
 }
 
 .main-content {
@@ -280,16 +281,16 @@ img {
 }
 
 .sidebar {
-    width: 350px; /* Increased the width */
-    padding-left: 50px; /* Adjust the padding as needed */
+    width: 350px; /* Default width */
+    padding-left: 50px; /* Default left padding */
     padding-top: 100px;
-    padding-right: 125px
+    padding-right: 125px; /* Default right padding */
 }
 
 .profile-card {
     background-color: #f9f9f9;
-    padding-top: 40px; /* Increased the top padding */
-    padding-bottom: 40px; /* Increased the bottom padding */
+    padding-top: 40px; /* Increased top padding */
+    padding-bottom: 40px; /* Increased bottom padding */
     padding-left: 20px; /* Set left padding */
     padding-right: 20px; /* Set right padding */
     border-radius: 10px;
@@ -315,10 +316,60 @@ img {
 .profile-card p {
     margin: 10px 0;
 }
+
 .profile-card .accomplishment {
     margin: 20px 0;
 }
+
 .profile-card .accomplishment strong {
     display: block;
     margin-bottom: 5px;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack the content vertically */
+        align-items: center; /* Center the items horizontally */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width for smaller screens */
+        padding: 10px 125px; /* Adjust padding for smaller screens */
+    }
+
+    .profile-card {
+        padding-top: 20px; /* Reduced top padding */
+        padding-bottom: 20px; /* Reduced bottom padding */
+        padding-left: 10px; /* Reduced left padding */
+        padding-right: 10px; /* Reduced right padding */
+        height: auto; /* Auto height for smaller screens */
+        max-width: 500px; /* Set max width for smaller screens */
+    }
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        width: 350px; /* Sidebar width for larger screens */
+        padding-left: 50px; /* Adjust the padding as needed */
+        padding-top: 100px;
+        padding-right: 125px; /* Adjusted right padding */
+    }
+
+    .profile-card {
+        padding-top: 40px; /* Increased top padding */
+        padding-bottom: 40px; /* Increased bottom padding */
+        padding-left: 20px; /* Set left padding */
+        padding-right: 20px; /* Set right padding */
+        height: 520px; /* Set height for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        padding-left: 75px; /* Adjust padding for larger screens */
+        padding-right: 125px; /* Adjust padding for larger screens */
+    }
+}
+
+
